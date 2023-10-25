@@ -1,6 +1,7 @@
 ##Class OverNetworkAuthentication
 
 class OverNetworkAuthentication:
+
     def __init__(self):
         # Initialize the database to store user profiles
         self.user_database = {}
