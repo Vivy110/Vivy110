@@ -1,16 +1,30 @@
-### Hi there 👋
+##Class OverNetworkAuthentication
 
-<!--
-**Vivy110/Vivy110** is a ✨ _special_ ✨ repository because its `README.md` (this file) appears on your GitHub profile.
+class OverNetworkAuthentication:
+    def __init__(self):
+        # Initialize the database to store user profiles
+        self.user_database = {}
 
-Here are some ideas to get you started:
+    def create_account(self, username, param2):
+        # Check if the username already exists in the database
+        if username in self.user_database:
+            return "Username already exists. Please choose a different one."
 
-- 🔭 I’m currently working on ...
-- 🌱 I’m currently learning ...
-- 👯 I’m looking to collaborate on ...
-- 🤔 I’m looking for help with ...
-- 💬 Ask me about ...
-- 📫 How to reach me: ...
-- 😄 Pronouns: ...
-- ⚡ Fun fact: ...
--->
+        # Create a new user profile
+        user_profile = {
+            "username": username,
+            "param2": param2,
+        }
+
+        # Store the user profile in the database
+        self.user_database[username] = user_profile
+
+        return f"Account for {username} created and user logged in."
+
+# Example usage:
+auth_system = OverNetworkAuthentication()
+username = "joe_shmoe"
+param2 = "Joe"
+
+result = auth_system.create_account(username, param2)
+print(result)
